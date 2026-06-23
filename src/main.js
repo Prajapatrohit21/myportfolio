@@ -74,68 +74,99 @@ function initTypewriter() {
   setTimeout(type, 1000);
 }
 
-// Contact form Mock logic
+// ============================================================
+// EMAILJS CONFIG
+// Service ID  : service_orccrco
+// Template ID : template_75mlq36
+// Public Key  : NrorH1z7UqkgdS8q7
+// ============================================================
+const EMAILJS_SERVICE_ID  = "service_orccrco";
+const EMAILJS_TEMPLATE_ID = "template_75mlq36";
+const EMAILJS_PUBLIC_KEY  = "NrorH1z7UqkgdS8q7";
+
+// Initialize EmailJS
+(function () {
+  if (window.emailjs) {
+    window.emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+  }
+})();
+
+// Contact form — real EmailJS submission
 function initContactForm() {
-  const contactForm = document.getElementById("contact-direct-form");
-  const sendBtn = document.getElementById("btn-contact-send");
-  
+  const contactForm  = document.getElementById("contact-direct-form");
+  const sendBtn      = document.getElementById("btn-contact-send");
+
   if (!contactForm || !sendBtn) return;
 
-  const textNode = sendBtn.querySelector(".btn-text");
-  const spinnerNode = sendBtn.querySelector(".btn-spinner");
+  const textNode     = sendBtn.querySelector(".btn-text");
+  const spinnerNode  = sendBtn.querySelector(".btn-spinner");
   const successAlert = document.getElementById("contact-form-success");
-  const errorAlert = document.getElementById("contact-form-error");
+  const errorAlert   = document.getElementById("contact-form-error");
 
-  contactForm.addEventListener("submit", (e) => {
+  contactForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
-    // Reset Alerts
-    if (successAlert) successAlert.classList.add("hidden");
-    if (errorAlert) errorAlert.classList.add("hidden");
+    // Reset alerts
+    successAlert?.classList.add("hidden");
+    errorAlert?.classList.add("hidden");
 
     // Show spinner
-    if (textNode) textNode.classList.add("hidden");
-    if (spinnerNode) spinnerNode.classList.remove("hidden");
+    textNode?.classList.add("hidden");
+    spinnerNode?.classList.remove("hidden");
     sendBtn.disabled = true;
 
-    // Retrieve input values
-    const name = document.getElementById("contact-name")?.value?.trim();
-    const email = document.getElementById("contact-email")?.value?.trim();
+    // Collect form values
+    const name    = document.getElementById("contact-name")?.value?.trim();
+    const email   = document.getElementById("contact-email")?.value?.trim();
     const subject = document.getElementById("contact-subject")?.value?.trim();
-    const msg = document.getElementById("contact-message")?.value?.trim();
+    const message = document.getElementById("contact-message")?.value?.trim();
 
-    // Simulated sending delay
-    setTimeout(() => {
-      // Revert button status
-      if (textNode) textNode.classList.remove("hidden");
-      if (spinnerNode) spinnerNode.classList.add("hidden");
-      sendBtn.disabled = false;
+    try {
+      // 📧 Send real email via EmailJS
+      await window.emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name : name,
+          from_email: email,
+          subject   : subject,
+          message   : message,
+          to_email  : "prajapatrohit934@gmail.com",
+          reply_to  : email,
+          sent_at   : new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" })
+        }
+      );
 
-      // ✅ Save inquiry to LocalStorage for terminal inbox command
+      // ✅ Save to LocalStorage (terminal inbox command)
       const newInquiry = {
         id: Math.random().toString(36).substring(2, 9),
-        name: name,
-        email: email,
-        subject: subject,
-        message: msg,
+        name, email, subject,
+        message,
         timestamp: new Date().toISOString()
       };
-
-      const existingRaw = localStorage.getItem("rohit-portfolio-inquiries");
-      const existing = existingRaw ? JSON.parse(existingRaw) : [];
+      const existing = JSON.parse(localStorage.getItem("rohit-portfolio-inquiries") || "[]");
       existing.push(newInquiry);
       localStorage.setItem("rohit-portfolio-inquiries", JSON.stringify(existing));
 
-      // Show Success alert
-      if (successAlert) {
-        successAlert.classList.remove("hidden");
-        contactForm.reset();
-        
-        // Hide after 5 seconds
-        setTimeout(() => {
-          successAlert.classList.add("hidden");
-        }, 5000);
-      }
-    }, 1800);
+      // ✅ Show success
+      textNode?.classList.remove("hidden");
+      spinnerNode?.classList.add("hidden");
+      sendBtn.disabled = false;
+
+      successAlert?.classList.remove("hidden");
+      contactForm.reset();
+      setTimeout(() => successAlert?.classList.add("hidden"), 5000);
+
+    } catch (err) {
+      console.error("EmailJS error:", err);
+
+      // ❌ Show error
+      textNode?.classList.remove("hidden");
+      spinnerNode?.classList.add("hidden");
+      sendBtn.disabled = false;
+      errorAlert?.classList.remove("hidden");
+      setTimeout(() => errorAlert?.classList.add("hidden"), 5000);
+    }
   });
 }
+
