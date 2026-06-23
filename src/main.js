@@ -76,11 +76,11 @@ function initTypewriter() {
 
 // ============================================================
 // EMAILJS CONFIG
-// Service ID  : service_orccrco
+// Service ID  : service_uuunrma
 // Template ID : template_75mlq36
 // Public Key  : NrorH1z7UqkgdS8q7
 // ============================================================
-const EMAILJS_SERVICE_ID  = "service_orccrco";
+const EMAILJS_SERVICE_ID  = "service_uuunrma";
 const EMAILJS_TEMPLATE_ID = "template_75mlq36";
 const EMAILJS_PUBLIC_KEY  = "NrorH1z7UqkgdS8q7";
 
