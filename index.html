@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en" data-accent="cyan">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/src/javascript.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rohit Prajapat | Full Stack Developer</title>
+  <meta name="description"
+    content="Portfolio of Rohit Prajapat, a Full Stack Developer proficient in HTML, CSS, JavaScript, PHP, Bootstrap, and SQL. Based in Ujjain, India. Available for opportunities." />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <!-- Interactive Background Canvas -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- Matrix Rain Digital Overlay for CLI 'matrix' command -->
+  <canvas id="matrix-canvas" class="hidden-canvas"></canvas>
+
+  <!-- Floating Navigation Bar -->
+  <header class="navbar-container">
+    <nav class="navbar" id="navbar-menu">
+      <a href="#hero" class="navbar-logo" id="nav-logo">
+        <span class="logo-accent">&lt;</span>Rohit<span class="logo-accent">.Dev /&gt;</span>
+      </a>
+
+      <ul class="nav-links" id="nav-nav-links">
+        <li><a href="#about" class="nav-link" id="link-about"><i class="fa-solid fa-user"></i> About</a></li>
+        <li><a href="#terminal" class="nav-link" id="link-terminal"><i class="fa-solid fa-terminal"></i> Terminal</a>
+        </li>
+        <li><a href="#projects" class="nav-link" id="link-projects"><i class="fa-solid fa-code"></i> Projects</a></li>
+        <li><a href="#experience" class="nav-link" id="link-experience"><i class="fa-solid fa-briefcase"></i>
+            Journey</a></li>
+        <li><a href="#guestbook" class="nav-link" id="link-guestbook"><i class="fa-solid fa-book-open"></i>
+            Guestbook</a></li>
+        <li><a href="#contact" class="nav-link" id="link-contact"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+      </ul>
+
+      <div class="nav-controls">
+        <!-- Accent Theme Switcher -->
+        <div class="theme-switcher" id="theme-accent-switcher" title="Change Accent Color">
+          <button class="accent-btn active-accent" data-accent="cyan" style="--accent-color: #00f2fe;"
+            id="accent-cyan-btn"></button>
+          <button class="accent-btn" data-accent="purple" style="--accent-color: #a18cd1;"
+            id="accent-purple-btn"></button>
+          <button class="accent-btn" data-accent="green" style="--accent-color: #05c46b;"
+            id="accent-green-btn"></button>
+          <button class="accent-btn" data-accent="red" style="--accent-color: #ff4757;" id="accent-red-btn"></button>
+        </div>
+
+        <!-- Mobile Menu Hamburger Toggle -->
+        <button class="mobile-menu-toggle" id="mobile-hamburger" aria-label="Toggle Navigation Menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </nav>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scroll-indicator"></div>
+  </header>
+
+  <main class="content-wrapper">
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="section hero-section">
+      <div class="hero-content">
+        <div class="hero-badge" id="hero-badge-tag"><i class="fa-solid fa-fire"></i> Available for Full Stack
+          Opportunities</div>
+        <h1 class="hero-title" id="main-hero-title">
+          Building Responsive <span class="gradient-text">Web Experiences</span> with Clean Code
+        </h1>
+        <p class="hero-subtitle" id="main-hero-subtitle">
+          Hi, I'm <strong class="developer-name">Rohit Prajapat</strong>. A dynamic Full Stack Developer crafting
+          responsive websites with HTML, CSS, JavaScript, PHP &amp; SQL.
+          <span class="typing-text-wrapper"><span id="typing-text"></span><span class="typing-cursor">|</span></span>
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary" id="btn-view-projects"><i class="fa-solid fa-compass"></i> Explore
+            My Work</a>
+          <a href="#contact" class="btn btn-secondary" id="btn-hire-me"><i class="fa-solid fa-paper-plane"></i> Contact
+            Me</a>
+          <a href="/src/assets/resume.pdf" download="Rohit_Prajapat_Resume.pdf" class="btn btn-tertiary"
+            id="btn-download-resume"><i class="fa-solid fa-file-pdf"></i> Get Resume</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="floating-card-container">
+          <div class="floating-card glass" id="card-hero-stats">
+            <div class="card-glow"></div>
+            <div class="floating-card-header">
+              <i class="fa-solid fa-server status-icon pulse"></i>
+              <span>Core System Active</span>
+            </div>
+            <div class="floating-card-body">
+              <div class="stat-row">
+                <span class="stat-label">Response Time:</span>
+                <span class="stat-val value-cyan">5-10 mins</span>
+              </div>
+              <div class="stat-row">
+                <span class="stat-label">Stack Preference:</span>
+                <span class="stat-val value-purple">HTML / CSS / JS / React.JS / PHP / SQL / Mongo DB / Node.JS /
+                  Express.JS / GIT /GITHUB / PYTHON</span>
+              </div>
+              <div class="stat-row">
+                <span class="stat-label">Education:</span>
+                <span class="stat-val value-green">BTECH AI&DS, MIT Ujjain</span>
+              </div>
+            </div>
+          </div>
+          <!-- Extra floating circle for depth -->
+          <div class="floating-sphere sphere-1"></div>
+          <div class="floating-sphere sphere-2"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT & SKILLS SECTION -->
+    <section id="about" class="section about-section">
+      <div class="section-header">
+        <span class="section-tagline">Background & Expertise</span>
+        <h2 class="section-title">Technical Mastery</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-card glass card-profile" id="about-profile-card">
+          <h3>Who I Am</h3>
+          <p>
+            Dynamic Full Stack Developer with one year of comprehensive experience in web development and design.
+            Proficient in creating responsive websites using HTML, CSS, JavaScript, and PHP, while leveraging SQL
+            for robust database management.
+          </p>
+          <p>
+            Committed to continuous learning and implementing best practices in website development to drive project
+            success and enhance user engagement. <em>Full Interest in coding &amp; always eager to learn new
+              technologies.</em>
+          </p>
+
+          <div class="profile-stats-grid">
+            <div class="profile-stat-box">
+              <span class="stat-num" id="stat-projects-count">5+</span>
+              <span class="stat-desc">Completed Projects</span>
+            </div>
+            <div class="profile-stat-box">
+              <span class="stat-num" id="stat-commits-count">1yr</span>
+              <span class="stat-desc">Experience</span>
+            </div>
+            <div class="profile-stat-box">
+              <span class="stat-num" id="stat-uptime-count">2027</span>
+              <span class="stat-desc">Graduation Year</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-card glass card-skills" id="about-skills-card">
+          <h3>My Stack</h3>
+          <div class="skills-categories-nav" id="skills-cat-nav">
+            <button class="skills-cat-tab active-tab" data-cat="all" id="tab-skills-all">All</button>
+            <button class="skills-cat-tab" data-cat="frontend" id="tab-skills-front">Frontend</button>
+            <button class="skills-cat-tab" data-cat="backend" id="tab-skills-back">Backend</button>
+            <button class="skills-cat-tab" data-cat="tools" id="tab-skills-tools">Tools & DevOps</button>
+          </div>
+          <div class="skills-list-wrapper" id="skills-container">
+            <!-- Dynamically populated skills cards go here -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TERMINAL CLI SECTION -->
+    <section id="terminal" class="section terminal-section-wrapper">
+      <div class="section-header">
+        <span class="section-tagline">Interactive Console</span>
+        <h2 class="section-title">Developer Terminal</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="terminal-container glass" id="terminal-box">
+        <div class="terminal-header">
+          <div class="terminal-buttons">
+            <span class="term-btn term-close" id="term-dot-close"></span>
+            <span class="term-btn term-minimize" id="term-dot-min"></span>
+            <span class="term-btn term-expand" id="term-dot-expand"></span>
+          </div>
+          <div class="terminal-title">guest@rohit-prajapat-terminal: ~</div>
+          <div class="terminal-status"><i class="fa-solid fa-wifi text-accent"></i> Online</div>
+        </div>
+
+        <div class="terminal-body" id="terminal-output-body">
+          <div class="terminal-line text-system">System initialization complete. Type 'help' for a list of available
+            commands.</div>
+          <div class="terminal-line text-system">----------------------------------------</div>
+          <div class="terminal-line text-welcome">
+            <pre class="ascii-art">
+    ____        __    _ __ 
+   / __ \____  / /_  (_) /_
+  / /_/ / __ \/ __ \/ / __/
+ / _, _/ /_/ / / / / / /_  
+/_/ |_|\____/_/ /_/_/\__/  
+            </pre>
+          </div>
+          <div class="terminal-line text-system">Welcome recruiter! You have logged into a sandbox shell. Feel free to
+            investigate.</div>
+          <!-- Lines will be dynamically printed here -->
+        </div>
+
+        <div class="terminal-input-row">
+          <span class="terminal-prompt">rohit.dev &gt; </span>
+          <input type="text" id="terminal-cli-input" class="terminal-input" autocomplete="off" autofocus
+            placeholder="type help..." />
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO PROJECTS SECTION -->
+    <section id="projects" class="section projects-section-wrapper">
+      <div class="section-header">
+        <span class="section-tagline">Work Highlights</span>
+        <h2 class="section-title">Featured Engineering Projects</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="portfolio-controls" id="portfolio-filter-buttons">
+        <button class="portfolio-filter-btn active-filter" data-filter="all" id="btn-filter-all">All Works</button>
+        <button class="portfolio-filter-btn" data-filter="fullstack" id="btn-filter-fs">Full-Stack</button>
+        <button class="portfolio-filter-btn" data-filter="frontend" id="btn-filter-fe">Frontend UI</button>
+        <button class="portfolio-filter-btn" data-filter="systems" id="btn-filter-sys">Cloud & Systems</button>
+      </div>
+
+      <div class="projects-grid" id="projects-showcase-grid">
+        <!-- Dynamically populated from projectsData.js -->
+      </div>
+    </section>
+
+    <!-- TIMELINE / JOURNEY SECTION -->
+    <section id="experience" class="section experience-timeline-wrapper">
+      <div class="section-header">
+        <span class="section-tagline">Career Track</span>
+        <h2 class="section-title">Professional Journey</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="timeline" id="timeline-container">
+        <!-- Dynamically populated timeline milestones -->
+      </div>
+    </section>
+
+    <!-- RECRUITER CORNER / GUESTBOOK SECTION -->
+    <section id="guestbook" class="section guestbook-section-wrapper">
+      <div class="section-header">
+        <span class="section-tagline">Guestbook</span>
+        <h2 class="section-title">Recruiter Corner</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="guestbook-grid">
+        <div class="guestbook-form-card glass" id="guestbook-input-card">
+          <h3>Leave a Digital Note</h3>
+          <p>Are you a recruiter, developer, or visitor? Sign the guestbook and leave your thoughts. Your feedback will
+            appear instantly in the local feed!</p>
+
+          <form id="guestbook-form" class="interactive-form">
+            <div class="form-group">
+              <label for="guestbook-name">Name / Company</label>
+              <input type="text" id="guestbook-name" required placeholder="Jane Doe from Google" class="form-control" />
+            </div>
+
+            <div class="form-group">
+              <label for="guestbook-role">Visitor Role</label>
+              <select id="guestbook-role" class="form-control">
+                <option value="Recruiter">Technical Recruiter</option>
+                <option value="Hiring Manager">Engineering Manager</option>
+                <option value="Developer">Software Engineer</option>
+                <option value="Other">Valued Visitor</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="guestbook-message">Your Message</label>
+              <textarea id="guestbook-message" required rows="4"
+                placeholder="Hey Rohit! Love the CLI terminal. Let's connect about an opening..."
+                class="form-control"></textarea>
+            </div>
+
+            <button type="submit" id="btn-guestbook-submit" class="btn btn-primary btn-block">
+              <i class="fa-solid fa-feather-pointed"></i> Sign Guestbook
+            </button>
+          </form>
+        </div>
+
+        <div class="guestbook-feed-card glass" id="guestbook-feed-card">
+          <h3>Recent Notes</h3>
+          <div class="guestbook-feed" id="guestbook-messages-feed">
+            <!-- Comments will be appended here dynamically -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section contact-section-wrapper">
+      <div class="section-header">
+        <span class="section-tagline">Get In Touch</span>
+        <h2 class="section-title">Let's Connect</h2>
+        <div class="section-divider"></div>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info-card glass" id="contact-info-card">
+          <h3>Contact Information</h3>
+          <p>I am open to discuss full-time roles, internships, or general dev chats. Get in touch
+            directly, and I'll respond within 24 hours.</p>
+
+          <div class="contact-details-list">
+            <div class="contact-item">
+              <div class="contact-icon-box"><i class="fa-solid fa-envelope"></i></div>
+              <div class="contact-detail-text">
+                <span class="detail-label">Email</span>
+                <a href="mailto:prajapatrohit934@gmail.com" class="detail-val">prajapatrohit934@gmail.com</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon-box"><i class="fa-solid fa-phone"></i></div>
+              <div class="contact-detail-text">
+                <span class="detail-label">Phone</span>
+                <a href="tel:+917415742695" class="detail-val">+91 7415742695</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon-box"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="contact-detail-text">
+                <span class="detail-label">Location</span>
+                <span class="detail-val">2, Chankyapuri, Nanakhedha, Ujjain, India</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon-box"><i class="fa-brands fa-github"></i></div>
+              <div class="contact-detail-text">
+                <span class="detail-label">GitHub</span>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer"
+                  class="detail-val">github.com/rohit-prajapat</a>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon-box"><i class="fa-brands fa-linkedin"></i></div>
+              <div class="contact-detail-text">
+                <span class="detail-label">LinkedIn</span>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+                  class="detail-val">linkedin.com/in/rohit-prajapat</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-card glass" id="contact-form-card">
+          <h3>Send Me a Message</h3>
+          <form id="contact-direct-form" class="interactive-form">
+            <div class="form-row">
+              <div class="form-group half-width">
+                <label for="contact-name">Full Name</label>
+                <input type="text" id="contact-name" required placeholder="Ram Prajapat" class="form-control" />
+              </div>
+              <div class="form-group half-width">
+                <label for="contact-email">Email Address</label>
+                <input type="email" id="contact-email" required placeholder="ram@gmail.com" class="form-control" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-subject">Subject</label>
+              <input type="text" id="contact-subject" required placeholder="Job Opportunity - Senior Frontend role"
+                class="form-control" />
+            </div>
+
+            <div class="form-group">
+              <label for="contact-message">Message Details</label>
+              <textarea id="contact-message" required rows="5"
+                placeholder="Dear Rohit, I'm reaching out from TechCorp. We have a position we think fits you..."
+                class="form-control"></textarea>
+            </div>
+
+            <button type="submit" id="btn-contact-send" class="btn btn-primary btn-block">
+              <span class="btn-text"><i class="fa-solid fa-paper-plane"></i> Send Direct Message</span>
+              <span class="btn-spinner hidden"><i class="fa-solid fa-circle-notch fa-spin"></i> Sending...</span>
+            </button>
+            <div id="contact-form-success" class="form-alert success-alert hidden">
+              <i class="fa-solid fa-circle-check"></i> Thank you! Your message was sent successfully.
+            </div>
+            <div id="contact-form-error" class="form-alert error-alert hidden">
+              <i class="fa-solid fa-triangle-exclamation"></i> Oops, something went wrong. Please try again.
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer-container">
+    <div class="footer-content">
+      <p>&copy; 2026 Rohit Prajapat. Built with Pure CSS & Vanilla JavaScript. All Rights Reserved.</p>
+      <p class="footer-tagline">Designed to secure opportunities. Uptime 100%.</p>
+    </div>
+  </footer>
+
+  <!-- DYNAMIC PROJECT DETAILS MODAL -->
+  <div class="modal-overlay hidden" id="project-details-modal" role="dialog" aria-modal="true">
+    <div class="modal-card glass" id="modal-card-element">
+      <button class="modal-close-btn" id="btn-close-modal" aria-label="Close Modal"><i
+          class="fa-solid fa-xmark"></i></button>
+      <div class="modal-body-content" id="modal-inner-content">
+        <!-- Dynamic details populated from portfolio.js -->
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
