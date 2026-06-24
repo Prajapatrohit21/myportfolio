@@ -50,7 +50,7 @@ export function initParticleBg() {
     // Calculate density based on screen dimensions
     const density = Math.floor((canvas.width * canvas.height) / 9000);
     const count = Math.min(density, 150); // Hard cap at 150 particles for performance
-    
+
     for (let i = 0; i < count; i++) {
       const x = Math.random() * canvas.width;
       const y = Math.random() * canvas.height;
@@ -61,7 +61,7 @@ export function initParticleBg() {
   // Animation Loop
   function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
+
     // Retrieve current accent theme color dynamically
     const rootStyle = getComputedStyle(document.documentElement);
     const accentColor = rootStyle.getPropertyValue('--accent').trim();
@@ -73,7 +73,7 @@ export function initParticleBg() {
     });
 
 
-}
+
     // Draw lines between nearby particles
     for (let i = 0; i < particles.length; i++) {
       for (let j = i + 1; j < particles.length; j++) {
@@ -115,7 +115,7 @@ export function initParticleBg() {
 
   // Event Listeners
   window.addEventListener("resize", resizeCanvas);
-  
+
   window.addEventListener("mousemove", (e) => {
     mouse.x = e.clientX;
     mouse.y = e.clientY;
