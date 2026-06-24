@@ -72,6 +72,8 @@ export function initParticleBg() {
       p.draw(accentColor);
     });
 
+
+}
     // Draw lines between nearby particles
     for (let i = 0; i < particles.length; i++) {
       for (let j = i + 1; j < particles.length; j++) {
