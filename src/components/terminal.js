@@ -26,6 +26,7 @@ export function initTerminal() {
         "  skills    - List my technical stack and expertise values.",
         "  projects  - Show detailed specifications of my engineering work.",
         "  contact   - Print my active links to email, github, and social media.",
+        "  resume    - Download / view my official Resume PDF.",
         "  theme     - Change system accent color. Usage: 'theme <cyan|purple|green|red>'",
         "  matrix    - Enter the digital simulation matrix.",
         "  inbox     - View recruiter direct inquiries. (Security key required)",
@@ -70,6 +71,16 @@ export function initTerminal() {
         "  - LinkedIn: https://linkedin.com/in/rohit-prajapat",
         "  - Location: 2, Chankyapuri, Nanakhedha, Ujjain, India"
       ]);
+    },
+    resume: () => {
+      printLine("Opening & Downloading Rohit Prajapat's official Resume PDF...", "text-success");
+      const a = document.createElement("a");
+      a.href = "/Rohit_Prajapat_Resume.pdf";
+      a.download = "Rohit_Prajapat_Resume.pdf";
+      a.target = "_blank";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
     },
     theme: (args) => {
       const validAccents = ["cyan", "purple", "green", "red"];
