@@ -37,7 +37,7 @@ export const projectsData = [
       "Cross-browser compatible with smooth CSS animations."
     ],
     demoLink: "#",
-    codeLink: "https://github.com",
+    codeLink: "https://github.com/Prajapatrohit21/myportfolio",
     architecture: `[Browser Client]
        │ (HTML/CSS/Bootstrap SPA)
        ▼
@@ -61,7 +61,7 @@ export const projectsData = [
       "Optimized landing pages to maximize ad conversion rates."
     ],
     demoLink: "#",
-    codeLink: "https://github.com",
+    codeLink: "https://github.com/Prajapatrohit21/myportfolio",
     architecture: `[Google Ads Platform]
        │ (Traffic Generation)
        ▼
@@ -85,7 +85,7 @@ export const projectsData = [
       "Efficient SQL queries with input validation and sanitization."
     ],
     demoLink: "#",
-    codeLink: "https://github.com",
+    codeLink: "https://github.com/Prajapatrohit21/myportfolio",
     architecture: `[PHP CRUD Application]
        │
        ├─► [Auth Module] (Session-based Login)

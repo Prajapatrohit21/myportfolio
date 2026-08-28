@@ -66,7 +66,7 @@ export function initTerminal() {
         "Contact Information & Connectors:",
         "  - Email:    prajapatrohit934@gmail.com",
         "  - Phone:    7415742695",
-        "  - GitHub:   https://github.com/rohit-prajapat",
+        "  - GitHub:   https://github.com/Prajapatrohit21",
         "  - LinkedIn: https://linkedin.com/in/rohit-prajapat",
         "  - Location: 2, Chankyapuri, Nanakhedha, Ujjain, India"
       ]);
