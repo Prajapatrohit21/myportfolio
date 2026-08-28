@@ -3,6 +3,7 @@
    ========================================================================== */
 
 import { skillsData, projectsData } from "../data/projectsData.js";
+import { downloadResumePdf } from "../utils/resumeData.js";
 
 export function initTerminal() {
   const terminalBody = document.getElementById("terminal-output-body");
@@ -74,13 +75,7 @@ export function initTerminal() {
     },
     resume: () => {
       printLine("Opening & Downloading Rohit Prajapat's official Resume PDF...", "text-success");
-      const a = document.createElement("a");
-      a.href = "/Rohit_Prajapat_Resume.pdf";
-      a.download = "Rohit_Prajapat_Resume.pdf";
-      a.target = "_blank";
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
+      downloadResumePdf("Rohit_Prajapat_Resume.pdf");
     },
     theme: (args) => {
       const validAccents = ["cyan", "purple", "green", "red"];

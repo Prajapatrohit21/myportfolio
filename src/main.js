@@ -8,6 +8,7 @@ import { initNavigation } from "./components/navigation.js";
 import { initTerminal } from "./components/terminal.js";
 import { initPortfolio } from "./components/portfolio.js";
 import { initGuestbook } from "./components/guestbook.js";
+import { downloadResumePdf } from "./utils/resumeData.js";
 
 // Initialize all features once DOM is fully loaded
 document.addEventListener("DOMContentLoaded", () => {
@@ -23,6 +24,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 3. Direct Contact Form Submission Handling
   initContactForm();
+
+  // 4. Resume Download Handler (Direct Instant Blob Download)
+  const resumeBtn = document.getElementById("btn-download-resume");
+  if (resumeBtn) {
+    resumeBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      downloadResumePdf("Rohit_Prajapat_Resume.pdf");
+    });
+  }
 });
 
 // Typewriter logic
