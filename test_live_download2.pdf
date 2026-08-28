@@ -20,6 +20,8 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- EmailJS SDK -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="module" crossorigin src="/assets/index-D1VjTeUR.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-BtlSKIT6.css">
 </head>
 
 <body>
@@ -92,8 +94,8 @@
             My Work</a>
           <a href="#contact" class="btn btn-secondary" id="btn-hire-me"><i class="fa-solid fa-paper-plane"></i> Contact
             Me</a>
-          <a href="https://raw.githubusercontent.com/Prajapatrohit21/myportfolio/main/public/Rohit_Prajapat_Resume.pdf" download="Rohit_Prajapat_Resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-tertiary" id="btn-download-resume"><i
-              class="fa-solid fa-file-pdf"></i> Get Resume</a>
+          <a href="/src/assets/resume.pdf" download="Rohit_Prajapat_Resume.pdf" class="btn btn-tertiary"
+            id="btn-download-resume"><i class="fa-solid fa-file-pdf"></i> Get Resume</a>
         </div>
       </div>
       <div class="hero-visual">
@@ -350,8 +352,8 @@
               <div class="contact-icon-box"><i class="fa-brands fa-github"></i></div>
               <div class="contact-detail-text">
                 <span class="detail-label">GitHub</span>
-                <a href="https://github.com/Prajapatrohit21" target="_blank" rel="noopener noreferrer"
-                  class="detail-val">github.com/Prajapatrohit21</a>
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer"
+                  class="detail-val">github.com/rohit-prajapat</a>
               </div>
             </div>
             <div class="contact-item">
@@ -427,7 +429,6 @@
     </div>
   </div>
 
-  <script type="module" src="/src/main.js"></script>
 </body>
 
 </html>

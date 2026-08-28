@@ -24,6 +24,6 @@ export function downloadResumePdf(filename = "Rohit_Prajapat_Resume.pdf") {
     }, 1000);
   } catch (err) {
     console.error("Blob download fallback:", err);
-    window.open("/Rohit_Prajapat_Resume.pdf", "_blank");
+    window.open("https://raw.githubusercontent.com/Prajapatrohit21/myportfolio/main/public/Rohit_Prajapat_Resume.pdf", "_blank");
   }
 }
